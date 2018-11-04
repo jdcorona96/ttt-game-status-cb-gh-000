@@ -36,3 +36,29 @@ def won?(board)
   end
   false
 end
+
+def full?(board)
+  board.all? do |element|
+    element == "X" || element == "O"
+  end
+end
+
+def draw?(board)
+  if full?(board) && !won?(board)
+    return true
+  end
+  false
+end
+
+def over?(board)
+
+  if won?(board) || full?(board)
+    return true
+  end
+  false
+end
+
+def winner(board)
+  won?(board)[0]
+end
+      
